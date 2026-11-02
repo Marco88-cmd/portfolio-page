@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: Unbounded, system-ui, sans-serif;
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-onaccent: var(--onaccent);
+}
+
+:root {
+  --page:#f1f2f4; --surface:#ffffff; --ink:#1b1d27; --muted:#565b69; --line:#d8dbe2;
+  --accent:#ffc533; --onaccent:#1b1d27;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:#101116; --surface:#181a22; --ink:#eef0f4; --muted:#a1a6b3; --line:#2a2d38;
+    --accent:#ffc533; --onaccent:#1b1d27;
+    color-scheme: dark;
+  }
+}
+html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body { background: var(--page); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
